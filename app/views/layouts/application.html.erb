@@ -9,14 +9,15 @@
   </head>
 
   <body>
+    <%= render 'layouts/_partials/navigation' %>
 
-    <% flash.each do |key, message| %>
-      <div class="text-center alert alert-<%= key == 'notice' ? 'success': 'danger' %>">
-        <%= message %>
-      </div>
-    <% end %>
-
-    <%= yield %>
-    
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <%= render 'layouts/_partials/flash' %>
+          <%= yield %>
+        </div> <!-- /.col -->
+      </div> <!-- /.row -->
+    </div> <!-- /.container -->
   </body>
 </html>
